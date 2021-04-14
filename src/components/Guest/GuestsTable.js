@@ -36,7 +36,7 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   table: {
     minWidth: 700,
   },
@@ -46,8 +46,13 @@ const useStyles = makeStyles({
     alignItems: 'center',
     marginBottom: '0.75rem',
     gap: '1rem'
+  },
+  emptyPlaceholderCell: {
+    padding: theme.spacing(3),
+    fontSize: '1.1rem',
+    textAlign: 'center'
   }
-});
+}));
 
 const headCells = [
   { id: 'name', label: 'Guest Name' },
@@ -124,6 +129,15 @@ function GuestsTable ({setOpenPopUp, guests, loadingGuests, handleVipStatusChang
       <Paper>
         <TblContainer>
           <TblHead></TblHead>
+          {
+            !guests.length && !loadingGuests &&(
+              <TableBody>
+                <TableRow>
+                  <StyledTableCell colSpan="12" className={classes.emptyPlaceholderCell}>No Guests Found.</StyledTableCell>
+                </TableRow>
+              </TableBody>
+            )
+          }
           <TableBody>
             {
               loadingGuests ?

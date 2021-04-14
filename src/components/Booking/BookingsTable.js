@@ -68,7 +68,7 @@ function BookingsTable ({setOpenPopUp, bookings, getBookings, loadingBookings, s
     { id: 'departureDate', label: 'Departure Date' },
     // { id: 'bookingStatus', label: 'Booking Status' },
     // { id: 'paymentStatus', label: 'Payment Status' },
-    { id: 'actions', label: 'Actions', disableSort: true, align: 'center' }
+    // { id: 'actions', label: 'Actions', disableSort: true, align: 'center' }
   ];
 
   if (isWidthUp('lg', width)) {
@@ -149,7 +149,7 @@ function BookingsTable ({setOpenPopUp, bookings, getBookings, loadingBookings, s
                     <StyledTableCell><Skeleton animation="wave" height={35} /></StyledTableCell>
                     <StyledTableCell><Skeleton animation="wave" height={35} /></StyledTableCell>
                     <StyledTableCell><Skeleton animation="wave" height={35} /></StyledTableCell>
-                    <StyledTableCell><Skeleton animation="wave" height={35} /></StyledTableCell>
+                    {/* <StyledTableCell><Skeleton animation="wave" height={35} /></StyledTableCell> */}
                     {
                       isWidthUp('lg', width) && <StyledTableCell><Skeleton animation="wave" height={35} /></StyledTableCell>
                     }
@@ -201,11 +201,11 @@ function BookingsTable ({setOpenPopUp, bookings, getBookings, loadingBookings, s
                       {booking.paymentStatus}
                     </StyledTableCell> */}
 
-                    <StyledTableCell align="center">
+                    {/* <StyledTableCell align="center">
                       <IconButton>
                         <VisibilityIcon color="primary" />
                       </IconButton>
-                    </StyledTableCell>
+                    </StyledTableCell> */}
                   </StyledTableRow>
                 ))
               )
