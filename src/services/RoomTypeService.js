@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BASE_URL = 'https://hotel-management-system-node.herokuapp.com';
+const BASE_URL = '/api';
 
 function getRoomTypes () {
   return axios.get(`${ BASE_URL }/roomTypes`);
